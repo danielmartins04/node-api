@@ -1,11 +1,12 @@
 const express = require("express");
-const app = express();
-
 const mongoose = require("mongoose");
+
+// Iniciando o App
+const app = express();
+app.use(express.json());
 
 // Iniciando o DB
 mongoose.connect('mongodb://localhost/nodeapi', { useNewUrlParser: true });
-
 require('./src/models/Product');
 
 // Rotas
